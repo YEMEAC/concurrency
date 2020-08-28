@@ -1,6 +1,7 @@
-package com.company;
+package com.company.simpleThreads;
 
-import static com.company.SimpleThreads.threadMessage;
+
+import static com.company.simpleThreads.SimpleThreads.threadMessage;
 
 public  class MessageLoop implements Runnable {
     public void run() {
