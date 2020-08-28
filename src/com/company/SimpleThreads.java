@@ -3,26 +3,6 @@ package com.company;
 
 public class SimpleThreads {
 
-    static void threadMessage(String message) {
-        String threadName = Thread.currentThread().getName();
-        System.out.format("%s: %s%n", threadName, message);
-    }
-
-    private static class MessageLoop implements Runnable {
-        public void run() {
-            String importantInfo[] = {"FIRST MESSAGE", "SECOND MESSAGE", "THIRD MESSAGE", "FORTH MESSAGE"};
-            try {
-                for (int i = 0; i < importantInfo.length; i++) {
-                    Thread.sleep(1000);
-                    threadMessage(importantInfo[i]);
-                }
-            } catch (InterruptedException e) {
-                threadMessage("I wasn't done!");
-            }
-            threadMessage("I finishing");
-        }
-    }
-
     public static void main(String args[]) throws InterruptedException {
 
         long timeout = 3000;
@@ -54,5 +34,10 @@ public class SimpleThreads {
             }
         }
         threadMessage("Finally!");
+    }
+
+    public static void threadMessage(String message) {
+        String threadName = Thread.currentThread().getName();
+        System.out.format("%s: %s%n", threadName, message);
     }
 }
